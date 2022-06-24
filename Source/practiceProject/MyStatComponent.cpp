@@ -61,8 +61,7 @@ void UMyStatComponent::SetHp(int32 NewHp)
 
 void UMyStatComponent::OnAttacked(float DamageAmount)
 {
-	Hp -= DamageAmount;
-	if (Hp < 0)
-		Hp = 0;
+	int32 NewHp = Hp - DamageAmount;
+	SetHp(NewHp);
 	UE_LOG(LogTemp, Warning, TEXT("OnAttacked %d"), Hp);
 }

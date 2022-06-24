@@ -85,7 +85,9 @@ void AMyCharacter::PostInitializeComponents()
 	HpBar->InitWidget();
 
 	// TODO
-
+	auto HpWidget = Cast<UMyCharacterWidget>(HpBar->GetUserWidgetObject());
+	if (HpWidget)
+		HpWidget->BindHp(Stat);
 }
 
 // Called every frame
